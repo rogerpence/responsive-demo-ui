@@ -1,0 +1,12 @@
+.animate-1 {
+    transition: all 1s ease .1s;
+}
+
+@responsive {
+    .max-h-0 {
+        max-height: 0;
+    }
+    .max-h-125 {
+        max-height: 125rem;
+    }
+}

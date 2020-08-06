@@ -1,0 +1,65 @@
+/*
+Dark blue
+http://paletton.com/#uid=33w0u0kcOcx8Ro8bzj5jkbrom8G
+White-Gray
+http://paletton.com/#uid=13w0u0k2fpX2Vbr2Xjq19-d04XH
+*/
+
+#page {
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template-areas: "header"
+                          "nav"
+                          "main-header"
+                          "main"
+                          "footer";
+    grid-template-rows: auto auto auto 1fr auto;
+    grid-template-columns: auto;
+}
+
+section#page > header {
+    grid-area: header;
+}
+
+section#page > nav {
+    grid-area: nav;
+}
+
+section#main-header {
+    grid-area: main-header;
+}
+
+section#page > main {
+    grid-area: main;
+}
+
+section#page > footer {
+    grid-area: footer;
+}
+
+@media (min-width: 768px) {
+    #page {
+        grid-template-areas: "header  header"
+                             "nav     main-header"
+                             "nav     main"
+                             "footer  footer";
+       grid-template-rows: auto auto 1fr auto;
+       grid-template-columns: auto 1fr;
+    }
+    #sub-nav {
+        max-height: 125rem;
+    }
+
+}
+
+/*
+@media (min-width: 1024px) {
+    #page {
+        grid-template-areas: "head head"
+                             "nav  main"
+                             "foot  foot";
+       grid-template-rows: auto 1fr auto;
+       grid-template-columns: auto 1fr;
+    }
+} */
