@@ -24,8 +24,12 @@ div.heading-row {
     align-self: center;
 }
 
+.data-row:hover {
+    background-color: lightgray;
+}
+
 .data-row {
-    padding: .6rem 0 .6rem  0;
+    padding: .6rem 0 .6rem  .6em;
 }
 
 .data-row a {
@@ -38,7 +42,7 @@ div.heading-row {
     border-radius: .25em;
     width: 5em;
     color: #4a5568;
-} 
+}
 
 .btn-1-dim {
     background-color:rgba(100, 149, 237, 0.1);
@@ -60,10 +64,10 @@ div.heading-row {
     border-radius: .25em;
     width: 5em;
     color: #4a5568;
-} 
+}
 
 .even-row {
-    background: rgba(213, 245, 227, 0.6); 
+    background: rgba(213, 245, 227, 0.6);
 }
 
 .odd-row {
@@ -82,7 +86,7 @@ div.heading-row {
     div#brand svg {
         width: 40rem;
     }
-    
+
     nav {
         max-height: 4000px;
     }
@@ -92,7 +96,7 @@ div.heading-row {
         grid-template-rows: auto;
         grid-template-columns: 40% 30% 20%;
     }
- 
+
     .heading-row div {
         align-self: center;
     }

@@ -1,1 +1,5 @@
 /* rp components */
+
+a[data-selected-nav-item] {
+    @apply text-wild-sand-100;
+}

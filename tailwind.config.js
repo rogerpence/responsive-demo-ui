@@ -41,15 +41,15 @@ module.exports = {
             900: '#30343A',
             },
             'wild-sand': {
-            100: '#FEFEFE',
-            200: '#FDFDFD',
-            300: '#FBFBFB',
-            400: '#F8F8F9',
-            500: '#F5F5F6',
-            600: '#DDDDDD',
-            700: '#939394',
-            800: '#6E6E6F',
-            900: '#4A4A4A',
+            100: '#F5F5F6',
+            200: '#DCDCDD',
+            300: '#C4C4C4',
+            400: '#ABABAC',
+            500: '#939393',
+            600: '#7A7A7B',
+            700: '#626262',
+            800: '#494949',
+            900: '#313131',
             },
         }
     },
@@ -58,6 +58,7 @@ module.exports = {
 
   variants: {
     borderStyle: ['responsive', 'hover'],
+    fontStyle: ['responsive', 'hover'],
   },
   plugins: [],
 }

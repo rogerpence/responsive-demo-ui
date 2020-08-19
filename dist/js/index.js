@@ -1,7 +1,5 @@
-import {registerEvents as registerEventsResponsive}  from './responsive.js'; 
-import {registerEvents as registerEventsHighlightButtons} from './highlightRowButtons.js';
+import {registerEvents as registerEventsNavigation}  from './NavigationManager.js';
 import {registerEventHandlers} from './RegisterEventHandlers.js';
 
-registerEventsResponsive();
-// registerEventsHighlightButtons();
+registerEventsNavigation();
 registerEventHandlers();

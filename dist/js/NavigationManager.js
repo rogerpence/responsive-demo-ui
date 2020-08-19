@@ -1,4 +1,18 @@
-class ReponsiveManager {
+/*
+ | Collapse navigation on one of two events:
+ | * Click or tap hamburger.
+ | * When the screen width reduces to less than MEDIUM_BREAKPOINT.
+
+ | In the real world, the second event handler probably isn't
+ | necessary. It's unlikely users would change widths like this
+ | --and if they did it probably doesn't matter much.
+ | However, for demoing the app's responsive capabilities
+ | on a desktop browser, collapsing the navigation when
+ | screen size is reduced looks good.
+ |
+*/
+
+class NavigationManager {
     constructor() {
         this.MEDIUM_BREAKPOINT = 768;
         this.hamburger = document.querySelector('#hamburger');
@@ -6,13 +20,13 @@ class ReponsiveManager {
         this.hamburgerButton = document.querySelector('#hamburger > button');
     }
 
-    showSubNav() {
+    showNavigation() {
         this.subNavContainer.classList.remove('max-h-0');
         this.subNavContainer.classList.add('max-h-125');
         this.hamburgerButton.classList.add('is-active');
     }
 
-    hideSubNav() {
+    hideNavigation() {
         this.subNavContainer.classList.add('max-h-0');
         this.subNavContainer.classList.remove('max-h-125');
         this.hamburgerButton.classList.remove('is-active');
@@ -21,26 +35,26 @@ class ReponsiveManager {
     registerEvents() {
         hamburger.addEventListener('click', (e) => {
             if (! this.subNavContainer.classList.contains('max-h-125')) {
-                this.showSubNav();
+                this.showNavigation();
             }
             else {
-                this.hideSubNav();
+                this.hideNavigation();
             }
         })
 
         window.addEventListener('resize', (e) => {
             if (window.innerWidth < this.MEDIUM_BREAKPOINT) {
-                this.hideSubNav();
+                this.hideNavigation();
             }
             if (window.innerWidth >= this.MEDIUM_BREAKPOINT) {
-                this.showSubNav();
+                this.showNavigation();
             }
         });
     }
 }
 
 function registerEvents() {
-    (new ReponsiveManager()).registerEvents()
+    (new NavigationManager()).registerEvents()
 }
 
 export {registerEvents};

@@ -1,6 +1,7 @@
 /*
 Dark blue
 http://paletton.com/#uid=33w0u0kcOcx8Ro8bzj5jkbrom8G
+
 White-Gray
 http://paletton.com/#uid=13w0u0k2fpX2Vbr2Xjq19-d04XH
 */
@@ -53,13 +54,3 @@ section#page > footer {
 
 }
 
-/*
-@media (min-width: 1024px) {
-    #page {
-        grid-template-areas: "head head"
-                             "nav  main"
-                             "foot  foot";
-       grid-template-rows: auto 1fr auto;
-       grid-template-columns: auto 1fr;
-    }
-} */
