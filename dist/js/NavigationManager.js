@@ -16,38 +16,41 @@ class NavigationManager {
     constructor() {
         this.MEDIUM_BREAKPOINT = 768;
         this.hamburger = document.querySelector('#hamburger');
-        this.subNavContainer = document.getElementById('sub-nav-container');
+        this.subNavContainer = document.querySelector('nav#sub-nav-container');
+        this.subNavContainerInner = document.querySelector('nav#sub-nav-container>div');
+
         this.hamburgerButton = document.querySelector('#hamburger > button');
     }
 
     showNavigation() {
-        this.subNavContainer.classList.remove('max-h-0');
-        this.subNavContainer.classList.add('max-h-125');
-        this.hamburgerButton.classList.add('is-active');
+        this.subNavContainer.style.height = `${this.subNavContainerInner.offsetHeight}px`;
     }
 
     hideNavigation() {
-        this.subNavContainer.classList.add('max-h-0');
-        this.subNavContainer.classList.remove('max-h-125');
-        this.hamburgerButton.classList.remove('is-active');
+        this.subNavContainer.style.height = 0;
     }
 
     registerEvents() {
         hamburger.addEventListener('click', (e) => {
-            if (! this.subNavContainer.classList.contains('max-h-125')) {
-                this.showNavigation();
+            if (this.subNavContainer.offsetHeight) {
+                this.hamburgerButton.classList.remove('is-active');
+                this.hideNavigation();
+
             }
             else {
-                this.hideNavigation();
+                this.hamburgerButton.classList.add('is-active');
+                this.showNavigation();
             }
         })
 
         window.addEventListener('resize', (e) => {
             if (window.innerWidth < this.MEDIUM_BREAKPOINT) {
                 this.hideNavigation();
+                this.subNavContainer.classList.add('animate-1');
             }
             if (window.innerWidth >= this.MEDIUM_BREAKPOINT) {
-                this.showNavigation();
+                this.subNavContainer.style.height = '100%';
+                this.subNavContainer.classList.remove('animate-1');
             }
         });
     }
